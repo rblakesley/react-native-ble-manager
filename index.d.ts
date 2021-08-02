@@ -37,7 +37,7 @@ declare module "react-native-ble-manager" {
     options?: ScanOptions
   ): Promise<void>;
   export function stopScan(): Promise<void>;
-  export function connect(peripheralID: string): Promise<void>;
+  export function connect(peripheralID: string, autoConnect?:boolean): Promise<void>;
   export function disconnect(
     peripheralID: string,
     force?: boolean

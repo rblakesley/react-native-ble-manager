@@ -273,7 +273,7 @@ class BleManager extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void connect(String peripheralUUID, Callback callback) {
+    public void connect(String peripheralUUID, boolean autoConnect, Callback callback) {
         Log.d(LOG_TAG, "Connect to: " + peripheralUUID);
 
         Peripheral peripheral = retrieveOrCreatePeripheral(peripheralUUID);
@@ -281,7 +281,7 @@ class BleManager extends ReactContextBaseJavaModule {
             callback.invoke("Invalid peripheral uuid");
             return;
         }
-        peripheral.connect(callback, getCurrentActivity());
+        peripheral.connect(callback, getCurrentActivity(), autoConnect);
     }
 
     @ReactMethod
