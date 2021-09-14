@@ -271,7 +271,9 @@ public class Peripheral extends BluetoothGattCallback {
 		gatt = gatta;
 
 		if (status != BluetoothGatt.GATT_SUCCESS) {
-		    gatt.close();
+			// Probably worth checking the error type here – see the "Handling common error scenarios"
+			// section at https://punchthrough.com/android-ble-guide/
+		  gatt.close();
 		}
 
 		if (newState == BluetoothProfile.STATE_CONNECTED) {

@@ -411,7 +411,7 @@ class BleManager extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void refreshCache(String deviceUUID, Callback callback) {
-        Log.d(LOG_TAG, "Refershing cache for: " + deviceUUID);
+        Log.d(LOG_TAG, "Refreshing cache for: " + deviceUUID);
         Peripheral peripheral = peripherals.get(deviceUUID);
         if (peripheral != null) {
             peripheral.refreshCache(callback);
@@ -421,7 +421,7 @@ class BleManager extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void readRSSI(String deviceUUID, Callback callback) {
-        Log.d(LOG_TAG, "Read RSSI from: " + deviceUUID);
+        Log.v(LOG_TAG, "Read RSSI from: " + deviceUUID);
         Peripheral peripheral = peripherals.get(deviceUUID);
         if (peripheral != null) {
             peripheral.readRSSI(callback);
